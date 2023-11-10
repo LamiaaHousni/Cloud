@@ -1,0 +1,79 @@
+{
+    "network_topology": {
+      "networks": [
+        {
+          "name": "Network1",
+          "components": [
+            {
+              "type": "subnet",
+              "name": "Sub-Network 1",
+              "ip_range": "192.168.1.0/24",
+              "ip_version": 4,
+              "components": [
+                {
+                  "type": "vm",
+                  "name": "CalcSvc",
+                  "ip": "192.168.1.10"
+                },
+                {
+                  "type": "router",
+                  "name": "RT1",
+                  "ip": "192.168.1.254",
+                  "external_gateway": true,
+                  "interfaces": [
+                    {"subnet_name": "Sub-Network 1"}
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Network2",
+          "components": [
+            {
+              "type": "subnet",
+              "name": "Sub-Network 2",
+              "ip_range": "192.168.2.0/24",
+              "ip_version": 4,
+              "components": [
+                {
+                  "type": "vm",
+                  "name": "SumSvc",
+                  "ip": "192.168.2.10"
+                },
+                {
+                  "type": "vm",
+                  "name": "DivSvc",
+                  "ip": "192.168.2.11"
+                },
+                {
+                  "type": "vm",
+                  "name": "MulSvc",
+                  "ip": "192.168.2.12"
+                },
+                {
+                  "type": "vm",
+                  "name": "SubSvc",
+                  "ip": "192.168.2.13"
+                },
+                {
+                  "type": "router",
+                  "name": "RT2",
+                  "ip": "192.168.1.253",
+                  "interfaces": [
+                    {"subnet_name": "Sub-Network 1"},
+                    {"subnet_name": "Sub-Network 2"}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
+  
+  
+  
